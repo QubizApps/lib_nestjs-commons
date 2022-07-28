@@ -4,14 +4,17 @@ import dts from 'rollup-plugin-dts';
 
 import pkg from './package.json';
 
+const production = !process.env.ROLLUP_WATCH;
+
 export default [
   {
     input: 'src/index.ts',
     plugins: [
-        del({ targets: ['./dist'] }),
+        del({ targets: ['./dist'], runOnce: !production, }),
         typescript({ 
           tsconfig: './tsconfig.json',
-          declarationDir: '@types'
+          declaration: true,
+          declarationDir: './@types'
         }),
     ],
     output: [

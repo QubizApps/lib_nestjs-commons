@@ -3,6 +3,7 @@
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "nodenext",
+    "lib": ["esnext"],
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": true,
@@ -15,8 +16,8 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "removeComments": false,
-    "declaration": true,
-    "outDir": "dist"
+    "baseUrl": "./",
+    "outDir": "./dist"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

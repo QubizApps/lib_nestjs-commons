@@ -10,12 +10,12 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "removeComments": false,
+    "declaration": true,
     "outDir": "dist"
   },
   "include": ["src/**/*"],

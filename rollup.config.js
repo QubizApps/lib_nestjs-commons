@@ -8,13 +8,11 @@ export default [
   {
     input: 'src/index.ts',
     plugins: [
-        del({ targets: ['./dist'] }),
+        del({ targets: ['dist'] }),
         typescript({ 
-          tsconfig: './tsconfig.json',
-          declaration: true,
-          declarationDir: 'dts',
-          outputToFilesystem: true
-        })
+          tsconfig: 'tsconfig.json',
+          declarationDir: '@types'
+        }),
     ],
     output: [
       { file: pkg.main, format: 'cjs', sourcemap: true },
@@ -23,12 +21,12 @@ export default [
   },
   // bundle all type definitions into one file
   {
-    input: 'dist/dts/index.d.ts',
+    input: 'dist/@types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'es' }],
     plugins: [
       dts(),
       del({
-        targets: ['./dist/dts'],
+        targets: ['dist/@types'],
         hook: 'buildEnd',
       }),
     ],

@@ -15,7 +15,7 @@ export default [
       typescript({
         tsconfig: path.join(__dirname, 'tsconfig.json'),
         declaration: true,
-        declarationDir: './@types'
+        declarationDir: 'dts'
       }),
     ],
     output: [
@@ -25,12 +25,12 @@ export default [
   },
   // bundle all type definitions into one file
   {
-    input: 'dist/@types/index.d.ts',
+    input: 'dist/dts/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'es' }],
     plugins: [
       dts(),
       del({
-        targets: ['./dist/@types'],
+        targets: ['./dist/dts'],
         hook: 'buildEnd',
       }),
     ],

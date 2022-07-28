@@ -1,4 +1,5 @@
 import typescript from '@rollup/plugin-typescript';
+import path from 'path';
 import del from 'rollup-plugin-delete';
 import dts from 'rollup-plugin-dts';
 
@@ -10,12 +11,12 @@ export default [
   {
     input: 'src/index.ts',
     plugins: [
-        del({ targets: ['./dist'], runOnce: !production, }),
-        typescript({ 
-          tsconfig: './tsconfig.json',
-          declaration: true,
-          declarationDir: './@types'
-        }),
+      del({ targets: ['./dist'], runOnce: !production, }),
+      typescript({
+        tsconfig: path.join(__dirname, 'tsconfig.json'),
+        declaration: true,
+        declarationDir: './@types'
+      }),
     ],
     output: [
       { file: pkg.main, format: 'cjs', sourcemap: true },

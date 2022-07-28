@@ -8,9 +8,9 @@ export default [
   {
     input: 'src/index.ts',
     plugins: [
-        del({ targets: ['dist'] }),
+        del({ targets: ['./dist'] }),
         typescript({ 
-          tsconfig: 'tsconfig.json',
+          tsconfig: './tsconfig.json',
           declarationDir: '@types'
         }),
     ],
@@ -26,7 +26,7 @@ export default [
     plugins: [
       dts(),
       del({
-        targets: ['dist/@types'],
+        targets: ['./dist/@types'],
         hook: 'buildEnd',
       }),
     ],

@@ -1,2 +1,2 @@
-# lib_nestjs-commons
-NestJS package for general usage among projects
+# lib_nodejs-commons
+All sorts of classes and utilities used between NestJS projects

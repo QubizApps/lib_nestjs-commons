@@ -19,7 +19,7 @@ export abstract class AggregateRoot<
   I = any,
   S extends AggregateRootState<I> = AggregateRootState,
 > extends NestAggregateRoot<DomainEvent> {
-  protected constructor(protected _state: S) {
+  constructor(protected _state: S) {
     super();
 
     this.autoCommit = false;

@@ -2,7 +2,8 @@
   "name": "@qubizapps/nestjs-commons",
   "version": "0.0.4",
   "description": "NestJS package with common classes used between projects",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -34,22 +35,22 @@
   },
   "homepage": "https://github.com/QubizApps/lib_nestjs-commons#readme",
   "peerDependencies": {
+    "@nestjs/common": "^9.0.7",
     "@nestjs/cqrs": "^9.0.1",
-    "uuid": "^8.3.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@nestjs/common": "^9.0.7",
     "@nestjs/cqrs": "^9.0.1",
-    "uuid": "^8.3.2",
-    "lodash": "^4.17.21",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.1",
-    "@types/lodash": "^4.14.182",
-    "@types/uuid": "^8.3.4",
     "@types/jest": "28.1.4",
+    "@types/lodash": "^4.14.182",
     "@types/node": "^16.0.0",
     "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "eslint": "^8.11.0",
@@ -59,17 +60,20 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "jest": "28.1.2",
-    "source-map-support": "^0.5.20",
-    "supertest": "^6.1.3",
-    "ts-jest": "28.0.5",
+    "lodash": "^4.17.21",
     "prettier": "^2.5.1",
     "release-it": "^15.2.0",
     "rollup": "^2.70.1",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-dts": "^4.2.0",
+    "rollup-plugin-node-externals": "^4.1.1",
     "rollup-plugin-terser": "^7.0.2",
+    "source-map-support": "^0.5.20",
+    "supertest": "^6.1.3",
+    "ts-jest": "28.0.5",
     "tslib": "^2.3.1",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "uuid": "^8.3.2"
   },
   "publishConfig": {
     "access": "public"

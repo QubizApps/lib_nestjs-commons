@@ -2,9 +2,10 @@
   "compilerOptions": {
     "target": "es6",
     "module": "esnext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
     "lib": ["esnext"],
     "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
     "strict": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,

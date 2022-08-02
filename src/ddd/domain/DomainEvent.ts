@@ -1,14 +1,8 @@
 import { Event } from '../../cqrs/types';
 import { AggregateRoot } from './AggregateRoot';
 
-export class DomainEvent<T = any> extends Event<T> {
-  readonly aggregateId: string;
-  readonly aggregateName: string;
+export type DomainEventPaylod<T extends AggregateRoot = AggregateRoot> = {
+  aggregate: T;
+};
 
-  constructor(aggregate: AggregateRoot, payload: T) {
-    super(payload);
-
-    this.aggregateId = aggregate.id.toString();
-    this.aggregateName = aggregate.constructor.name;
-  }
-}
+export class DomainEvent<T extends DomainEventPaylod = DomainEventPaylod> extends Event<T> {}

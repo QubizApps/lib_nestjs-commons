@@ -1,6 +1,6 @@
 {
   "name": "@qubizapps/nestjs-commons",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "NestJS package with common classes used between projects",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
